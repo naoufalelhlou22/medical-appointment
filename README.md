@@ -38,8 +38,8 @@ To set up the project locally, follow these steps:
 ### Clone the repository 🧑‍💻
 
 ```bash
-git clone https://github.com/yourusername/medical-appointment-system.git
-cd medical-appointment-system
+git clone https://github.com/yourusername/medical-appointment.git
+cd medical-appointment
 ```
 
 ### Access the application 🌐
