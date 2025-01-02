@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+<div class="min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="bg-blue-600 text-white p-4 shadow">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold">Doctor Dashboard</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="analysis.html" class="hover:underline">Analysis</a></li>
+                    <li><a href="appointments-list.html" class="hover:underline">Appointments List</a></li>
+                    <li><a href="edit-appointment.html" class="hover:underline">Edit Appointments</a></li>
+                    <li><a href="add-appointment.html" class="hover:underline">Add Appointment</a></li>
+                    <li><a href="patient-management.html" class="hover:underline">Patient Management</a></li>
+                    <li><a href="profile.html" class="hover:underline">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container mx-auto my-5">
+        <header class="text-center py-4 mb-5 bg-blue-500 text-white rounded shadow">
+            <h1 class="text-2xl font-bold">Medical Dashboard</h1>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            <!-- Card 1 -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Total Active Patients</h2>
+                <p class="text-3xl font-bold text-blue-500">325</p>
+                <canvas id="chartActivePatients" class="mt-4"></canvas>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Total Appointments Last Month</h2>
+                <p class="text-3xl font-bold text-green-500">1,220</p>
+                <canvas id="chartLastMonth" class="mt-4"></canvas>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Total Appointments Last Year</h2>
+                <p class="text-3xl font-bold text-red-500">14,560</p>
+                <canvas id="chartLastYear" class="mt-4"></canvas>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Total Appointments Today</h2>
+                <p class="text-3xl font-bold text-yellow-500">75</p>
+                <canvas id="chartToday" class="mt-4"></canvas>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Total Patients Come to Hospital</h2>
+                <p class="text-3xl font-bold text-purple-500">3,150</p>
+                <canvas id="chartTotalPatients" class="mt-4"></canvas>
+            </div>
+
+            <!-- More Cards -->
+            <div class="bg-white p-4 rounded shadow text-center">
+                <h2 class="text-lg font-semibold">Average Waiting Time</h2>
+                <p class="text-3xl font-bold text-gray-700">15 mins</p>
+                <canvas id="chartWaitingTime" class="mt-4"></canvas>
+            </div>
+        </section>
+    </div>
+</div>
+
+    <script>
+        // Function to generate sample charts
+        function createChart(canvasId, type, labels, data, colors) {
+            const ctx = document.getElementById(canvasId).getContext('2d');
+            new Chart(ctx, {
+                type: type,
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: colors,
+                        borderColor: colors.map(color => color.replace('0.5', '1')),
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'top',
+                        },
+                    }
+                }
+            });
+        }
+
+        // Sample charts for each card
+        createChart('chartActivePatients', 'pie', ['Active', 'Inactive'], [325, 675], ['rgba(54, 162, 235, 0.5)', 'rgba(255, 99, 132, 0.5)']);
+        createChart('chartLastMonth', 'bar', ['Week 1', 'Week 2', 'Week 3', 'Week 4'], [300, 400, 320, 200], ['rgba(75, 192, 192, 0.5)']);
+        createChart('chartLastYear', 'line', ['Q1', 'Q2', 'Q3', 'Q4'], [3500, 4000, 3700, 4360], ['rgba(255, 206, 86, 0.5)']);
+        createChart('chartToday', 'doughnut', ['Morning', 'Afternoon', 'Evening'], [25, 30, 20], ['rgba(153, 102, 255, 0.5)', 'rgba(255, 159, 64, 0.5)', 'rgba(54, 162, 235, 0.5)']);
+        createChart('chartTotalPatients', 'bar', ['Jan', 'Feb', 'Mar', 'Apr'], [800, 900, 700, 750], ['rgba(255, 99, 132, 0.5)']);
+        createChart('chartWaitingTime', 'radar', ['Reception', 'Consultation', 'Pharmacy'], [5, 8, 2], ['rgba(54, 162, 235, 0.5)']);
+    </script>
+</body>
+</html>
