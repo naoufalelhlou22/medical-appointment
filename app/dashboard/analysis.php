@@ -35,14 +35,14 @@
             <!-- Card 3 -->
             <div class="bg-white p-4 rounded shadow text-center">
                 <h2 class="text-lg font-semibold">Total Appointments Last Year</h2>
-                <p class="text-3xl font-bold text-red-500">14,560</p>
+                <p id="totalAppointmentsLastYear" class="text-3xl font-bold text-blue-500"></p>
                 <canvas id="chartLastYear" class="mt-4"></canvas>
             </div>
 
             <!-- Card 4 -->
             <div class="bg-white p-4 rounded shadow text-center">
                 <h2 class="text-lg font-semibold">Total Appointments Today</h2>
-                <p class="text-3xl font-bold text-yellow-500">75</p>
+                <p id="totalAppointmentsToday" class="text-3xl font-bold text-blue-500"></p>
                 <canvas id="chartToday" class="mt-4"></canvas>
             </div>
 

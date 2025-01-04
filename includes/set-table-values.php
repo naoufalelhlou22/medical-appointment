@@ -29,8 +29,48 @@ function setMedicalInfoValues($tableName, $medicalInfo): void
 function setAppointmentDetailsValues($tableName, array $array): void
 {
     global $conn;
-    $query = "INSERT INTO `$tableName` (`reason_for_visit`, `preferred_date_time`, `doctor`) 
-              VALUES ('{$array['reason_for_visit']}', '{$array['preferred_date_time']}', '{$array['doctor']}')";
+    $currentDay = date('d');
+    $currentMonth = date('m');
+    $currentTime = date('H');
+    $createdWeek = NULL;
+
+    if ($currentDay >= '01' and $currentDay <= '07') {
+        $createdWeek = 1;
+    } else if ($currentDay >= '08' and $currentDay <= '14') {
+        $createdWeek = 2;
+    } else if ($currentDay >= '15' and $currentDay <= '21') {
+        $createdWeek = 3;
+    } else if ($currentDay >= '22' and $currentDay <= '28') {
+        $createdWeek = 4;
+    }
+
+    $createdQuarter = NULL;
+
+    if ($currentMonth >= '01' and $currentMonth <= '03') {
+        $createdQuarter = 1;
+    } else if ($currentMonth >= '04' and $currentMonth <= '06') {
+        $createdQuarter = 2;
+    } else if ($currentMonth >= '07' and $currentMonth <= '09') {
+        $createdQuarter = 3;
+    } else if ($currentMonth >= '10' and $currentMonth <= '12') {
+        $createdQuarter = 4;
+    }
+
+    $daySession = NULL;
+
+    if ($currentTime >= '06' and $currentTime <= '12') {
+        $daySession = 1;
+    } else if ($currentTime >= '12' and $currentTime <= '18') {
+        $daySession = 2;
+    } else if ($currentTime >= '18' and $currentTime <= '21') {
+        $daySession = 3;
+    } else if ($currentTime >= '21' and $currentTime <= '06') {
+        $daySession = 4;
+    }
+
+    $query = "INSERT INTO `$tableName` (`reason_for_visit`, `preferred_date_time`, `doctor`, `created_week`, `created_quarter`, `day_session`) 
+              VALUES ('{$array['reason_for_visit']}', '{$array['preferred_date_time']}', '{$array['doctor']}', '$createdWeek', '$createdQuarter', '$daySession')";
+
     if (!mysqli_query($conn, $query)) {
         echo json_encode(['success: ' => 'false', 'message: ' => mysqli_error($conn)]);
     }
