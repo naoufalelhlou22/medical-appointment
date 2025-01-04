@@ -1,0 +1,164 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book Appointment</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="../assets/css/appointment-page.css">
+    </head>
+
+    <!-- Header Section -->
+    <div class="header">
+        <!-- Menu Dropdown -->
+        <div class="menu">
+            <div class="menu-icon">☰</div>
+            <div class="dropdown-menu">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+
+        <!-- Logo -->
+        <div class="logo">
+            <a href="#">
+                MyDoctor<span id="plus">+</span>
+            </a>
+        </div>
+        <button class="contact-button">Contact</button>
+
+    </div>
+
+    <!-- Main -->
+    <body class="font-roboto bg-gray-100">
+
+    <div class="container mx-auto bg-white rounded-lg shadow-lg flex overflow-hidden" style="width: 1350px; height: 750px;">
+        <!-- Left Section: Form -->
+        <div class="form-container w-1/2 flex justify-center items-center">
+            <div class="w-3/4">
+                <!-- Step 1: Patient Information -->
+                <div class="form-section hidden" id="step-1">
+                    <h2 class="text-2xl font-bold text-center mb-6">Patient Information</h2>
+                    <label for="full-name" class="block mb-2 font-semibold required">Full Name:</label>
+                    <input type="text" id="full-name" placeholder="Enter your full name" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+
+                    <label for="dob" class="block mb-2 font-semibold">Date of Birth:</label>
+                    <input type="date" id="dob" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+
+                    <label for="gender" class="block mb-2 font-semibold">Gender:</label>
+                    <select id="gender" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+                        <option value="" disabled selected>Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+
+                    <label for="phone" class="block mb-2 font-semibold">Phone Number:</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+
+                    <label for="email" class="block mb-2 font-semibold">Email Address:</label>
+                    <input type="email" id="email" placeholder="Enter your email" class="w-full p-3 mb-6 border border-gray-300 rounded-md" required>
+
+                    <div class="flex justify-between">
+                        <button class="bg-gray-300 text-gray-700 p-3 rounded-md" onclick="window.location.href='https://google.com'">Cancel</button>
+                        <button class="bg-[#124C4C] text-white p-3 rounded-md w-40"
+                                onclick="goToStep(2)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Appointment Details -->
+                <div class="form-section hidden" id="step-2">
+                    <h2 class="text-2xl font-bold text-center mb-6">Appointment Details</h2>
+                    <label for="reason" class="block mb-2 font-semibold">Reason for Visit:</label>
+                    <select id="reason" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+                        <!-- Options... -->
+                        <option value="" disabled selected>Select Reason</option>
+                        <option value="routine-checkup">Routine Checkup</option>
+                        <option value="follow-up">Follow-up Appointment</option>
+                        <option value="general-illness">General Illness</option>
+                        <option value="annual-physical">Annual Physical Exam</option>
+                        <option value="vaccination">Vaccination</option>
+                        <option value="prescription-refill">Prescription Refill</option>
+                        <option value="chronic-condition">Chronic Condition Management</option>
+                        <option value="skin-issues">Skin Issues</option>
+                        <option value="pain-management">Pain Management</option>
+                        <option value="digestive-issues">Digestive Issues</option>
+                        <option value="respiratory-problems">Respiratory Problems</option>
+                        <option value="headache">Headache or Migraine</option>
+                        <option value="mental-health">Mental Health Concerns</option>
+                        <option value="women-health">Women's Health</option>
+                        <option value="men-health">Men's Health</option>
+                        <option value="child-health">Child’s Health</option>
+                        <option value="minor-injury">Minor Injury</option>
+                        <option value="allergy-symptoms">Allergy Symptoms</option>
+                        <option value="vision-problems">Vision Problems or Eye Checkup</option>
+                        <option value="hearing-problems">Hearing Problems or Ear Checkup</option>
+                        <option value="preoperative-assessment">Preoperative Assessment</option>
+                        <option value="postoperative-follow-up">Postoperative Follow-Up</option>
+                        <option value="lab-test-results">Lab Test Results Review</option>
+                        <option value="referral-to-specialist">Referral to Specialist</option>
+                        <option value="second-opinion">Second Opinion Consultation</option>
+                        <option value="travel-health">Travel Health Advice or Vaccination</option>
+                        <option value="sexual-health">Sexual Health Concerns</option>
+                        <option value="sleep-disorders">Sleep Disorders</option>
+                        <option value="weight-management">Weight Management or Nutrition Counseling</option>
+                    </select>
+                    </select>
+
+                    <label for="preferred-date-time" class="block mb-2 font-semibold">Preferred Date & Time:</label>
+                    <input type="datetime-local" id="preferred-date-time" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+
+                    <label for="doctor" class="block mb-2 font-semibold">Doctor/Specialist:</label>
+                    <select id="doctor" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required>
+                        <option value="doctor1">Dr. Ahmad Dimas</option>
+                        <option value="doctor2">Dr. John Smith</option>
+                    </select>
+
+                    <div class="flex justify-between">
+                        <button class="bg-gray-300 text-gray-700 p-3 rounded-md" onclick="goToStep(1)">Back</button>
+                        <button class="bg-[#124C4C] text-white p-3 rounded-md w-40" onclick="goToStep(3)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Medical Information -->
+                <div class="form-section hidden" id="step-3">
+                    <h2 class="text-2xl font-bold text-center mb-6">Medical Information</h2>
+                    <label for="symptoms" class="block mb-2 font-semibold">Current Symptoms/Concerns:</label>
+                    <textarea id="symptoms" placeholder="Describe your symptoms" class="w-full p-3 mb-4 border border-gray-300 rounded-md" required></textarea>
+                    <label for="medical-reports" class="block mb-2 font-semibold">Upload Medical Reports:</label>
+                    <input type="file" id="medical-reports" class="w-full p-3 mb-4 border border-gray-300 rounded-md">
+                    <label for="insurance-info" class="block mb-2 font-semibold">Insurance Information:</label>
+                    <input type="text" id="insurance-info" placeholder="Enter insurance provider & ID" class="w-full p-3 mb-6 border border-gray-300 rounded-md">
+
+                    <div class="flex justify-between">
+                        <button class="bg-gray-300 text-gray-700 p-3 rounded-md" onclick="goToStep(2)">Back</button>
+                        <button class="bg-[#124C4C] text-white p-3 rounded-md w-40" onclick="sendAppointmentData(); goToStep(4)">Submit</button>
+
+                        <!--
+                                                <button class="bg-[#124C4C] text-white p-3 rounded-md w-40" onclick="goToStep(4)">Next</button>
+                        -->
+                    </div>
+                </div>
+
+                <!-- Step 4: Appointment Confirmed -->
+                <div class="form-section hidden" id="step-4">
+                    <h2 class="text-2xl font-bold text-center mb-6">Appointment Confirmed!</h2>
+                    <p class="mb-6 text-center">Thank you for booking your appointment. You will receive a confirmation email shortly.</p>
+                    <div class="flex justify-center">
+                        <button class="bg-[#124C4C] text-white p-3 rounded-md w-40" onclick="goToStep(1)">Book Another</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Section: Image -->
+        <div class="image-section w-1/2"></div>
+    </div>
+
+    <script src="../assets/js/appointment-go-to.js" type="text/javascript"></script>
+    <script src="../assets/js/appointment-validation.js" type="text/javascript"></script>
+    <script src="../assets/js/sent-fields.js" type="text/javascript"></script>
+    </body>
+    </html>

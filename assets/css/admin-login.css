@@ -1,0 +1,93 @@
+/* General body styling */
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f9fafb;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Left section: Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+form label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    height: 30px;
+}
+
+form input {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    background-color: #f4f4f4;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input:focus {
+    border-color: #a8bdc3;
+    box-shadow: 0 0 5px rgba(18, 76, 76, 0.5);
+    outline: none;
+}
+
+button[type="submit"] {
+    background-color: #52646c;
+    color: white;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #a8bdc3;
+}
+
+#response-message {
+    font-size: 0.875rem;
+    color: #124C4C;
+    margin-top: 1rem;
+}
+
+/* Right section: Image styling */
+.image-section {
+    background-image: url('../images/admin-left-panel.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Text center alignment */
+.text-center {
+    text-align: center;
+}
+
+/* Box shadow for container */
+.container {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 1000px;
+}
+
+/* Typography */
+h1 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #3d4952;
+}
+
+p {
+    font-size: 0.875rem;
+    color: #666;
+}
