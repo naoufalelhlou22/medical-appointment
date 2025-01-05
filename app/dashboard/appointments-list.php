@@ -36,7 +36,7 @@
           <td class="py-3 px-4">35</td>
           <td class="py-3 px-4 text-green-500">Confirmed</td>
           <td class="py-3 px-4">
-            <a href="view-appointment-details.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
+            <a href="view-appointments.php" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
             <a href="edit-appointment.php" class="bg-yellow-500 text-white px-4 py-2 rounded hover:bg-yellow-600">Edit</a>
           </td>
         </tr>

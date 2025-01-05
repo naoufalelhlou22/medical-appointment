@@ -64,10 +64,10 @@ function setAppointmentDetailsValues($tableName, array $array): void
         $daySession = 2;
     } else if ($currentTime >= '18' and $currentTime <= '21') {
         $daySession = 3;
-    } else if ($currentTime >= '21' and $currentTime <= '06') {
+    } else  {
         $daySession = 4;
     }
-
+    echo json_encode(['session' => $daySession]);
     $query = "INSERT INTO `$tableName` (`reason_for_visit`, `preferred_date_time`, `doctor`, `created_week`, `created_quarter`, `day_session`) 
               VALUES ('{$array['reason_for_visit']}', '{$array['preferred_date_time']}', '{$array['doctor']}', '$createdWeek', '$createdQuarter', '$daySession')";
 

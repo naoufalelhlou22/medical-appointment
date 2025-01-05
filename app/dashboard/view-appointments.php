@@ -75,6 +75,36 @@
       </div>
     </div>
   </div>
+
+    <!-- Send Notification Button Section -->
+    <div class="container mx-auto my-5 p-4">
+        <button
+                class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+                onclick="sendActionToFile()">
+            Confirm Appointment
+        </button>
+    </div>
 </div>
 </body>
+<script>
+    function sendActionToFile() {
+        // Using fetch to send a POST request to file.php
+        fetch('file.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'action=confirmAppointment', // Data to send
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log(data); // Log the response (Optional)
+                alert('Appointment confirmed!'); // Notify the user
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to confirm appointment.'); // Notify the user
+            });
+    }
+</script>
 </html>
