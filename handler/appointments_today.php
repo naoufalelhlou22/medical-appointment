@@ -1,7 +1,7 @@
 <?php
 
 global $conn;
-require_once('../includes/conn-db.php');
+require_once('../includes/conn_db.php');
 require_once('../functions/convert_date_to_months.php');
 
 header('Access-Control-Allow-Origin: *'); // Allow requests from any origin

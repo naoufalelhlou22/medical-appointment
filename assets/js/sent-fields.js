@@ -42,7 +42,7 @@ function sendAppointmentData() {
         appointmentData.medical_info.medical_reports = fileName; // Assign the file name after upload
 
         // Send the final appointment data to the PHP backend using Fetch API
-        fetch('http://localhost/medical-appointment/handler/set-appointment-data.php', {
+        fetch('http://localhost/medical-appointment/handler/set_appointment_data.php', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

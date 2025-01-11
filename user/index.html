@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyDoctor+ - Online Medical Appointments</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    .hero-section {
+      background-image: url('https://via.placeholder.com/1500x800'); /* Replace with your hero image */
+      background-size: cover;
+      background-position: center;
+    }
+    .logo a {
+      font-size: 24px;
+      font-weight: bold;
+      color: #124C4C;
+    }
+    #plus {
+      color: #FF6B6B;
+    }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+    .menu:hover .dropdown-menu {
+      display: block;
+    }
+  </style>
+</head>
+<body class="font-roboto bg-gray-100">
+<!-- Header Section -->
+<div class="header bg-white shadow-md fixed w-full z-50">
+  <div class="container mx-auto flex justify-between items-center p-4">
+    <!-- Menu Dropdown -->
+    <div class="menu relative">
+      <div class="menu-icon cursor-pointer text-2xl">☰</div>
+      <div class="dropdown-menu absolute mt-2 py-2 w-48 rounded-lg">
+        <a href="#home" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+        <a href="#about" class="block px-4 py-2 hover:bg-gray-100">About Us</a>
+        <a href="#services" class="block px-4 py-2 hover:bg-gray-100">Services</a>
+        <a href="#contact" class="block px-4 py-2 hover:bg-gray-100">Contact</a>
+      </div>
+    </div>
+
+    <!-- Logo -->
+    <div class="logo">
+      <a href="#">
+        MyDoctor<span id="plus">+</span>
+      </a>
+    </div>
+
+    <!-- Contact Button -->
+    <button class="contact-button bg-[#124C4C] text-white px-6 py-2 rounded-md hover:bg-[#0E3A3A]">
+      Contact
+    </button>
+  </div>
+</div>
+
+<!-- Hero Section -->
+<div class="hero-section h-screen flex items-center justify-center text-center text-white">
+  <div class="bg-black bg-opacity-50 p-12 rounded-lg">
+    <h1 class="text-5xl font-bold mb-6">Welcome to MyDoctor<span class="text-[#FF6B6B]">+</span></h1>
+    <p class="text-xl mb-8">Your trusted partner for online medical appointments. Book your consultation with top specialists today!</p>
+    <a href="appointment.html" class="bg-[#124C4C] text-white px-8 py-3 rounded-md hover:bg-[#0E3A3A]">
+      Book an Appointment
+    </a>
+  </div>
+</div>
+
+<!-- About Section -->
+<div id="about" class="container mx-auto py-16">
+  <h2 class="text-3xl font-bold text-center mb-8">About MyDoctor<span class="text-[#FF6B6B]">+</span></h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="p-6">
+      <p class="text-lg mb-4">
+        MyDoctor+ is a revolutionary platform designed to make healthcare accessible and convenient. Whether you need a routine checkup, specialist consultation, or urgent care, we connect you with trusted doctors in just a few clicks.
+      </p>
+      <p class="text-lg">
+        Our mission is to provide seamless, secure, and personalized healthcare services to everyone, anytime, anywhere.
+      </p>
+    </div>
+    <div class="p-6">
+      <img src="https://via.placeholder.com/600x400" alt="About Us" class="rounded-lg shadow-lg">
+    </div>
+  </div>
+</div>
+
+<!-- Services Section -->
+<div id="services" class="bg-gray-50 py-16">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Our Services</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h3 class="text-xl font-bold mb-4">General Consultations</h3>
+        <p class="text-gray-700">Get expert advice from certified general practitioners for all your health concerns.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h3 class="text-xl font-bold mb-4">Specialist Appointments</h3>
+        <p class="text-gray-700">Connect with specialists in cardiology, dermatology, pediatrics, and more.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+        <h3 class="text-xl font-bold mb-4">Urgent Care</h3>
+        <p class="text-gray-700">Immediate medical attention for non-life-threatening conditions.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Contact Section -->
+<div id="contact" class="container mx-auto py-16">
+  <h2 class="text-3xl font-bold text-center mb-8">Contact Us</h2>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="p-6">
+      <p class="text-lg mb-4">Have questions or need assistance? Reach out to our support team.</p>
+      <p class="text-lg mb-4">Email: <a href="mailto:support@mydoctorplus.com" class="text-[#124C4C]">support@mydoctorplus.com</a></p>
+      <p class="text-lg">Phone: <a href="tel:+1234567890" class="text-[#124C4C]">+1 (234) 567-890</a></p>
+    </div>
+    <div class="p-6">
+      <img src="https://via.placeholder.com/600x400" alt="Contact Us" class="rounded-lg shadow-lg">
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="bg-[#124C4C] text-white py-8">
+  <div class="container mx-auto text-center">
+    <p>&copy; 2023 MyDoctor<span class="text-[#FF6B6B]">+</span>. All rights reserved.</p>
+  </div>
+</div>
+</body>
+</html>

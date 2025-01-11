@@ -1,7 +1,7 @@
 <?php
 
 global $conn;
-require_once('../includes/conn-db.php');
+require_once('../includes/conn_db.php');
 require_once('../functions/convert_date_to_months.php');
 
 header('Access-Control-Allow-Origin: *'); // Allow requests from any origin
@@ -14,24 +14,28 @@ $result = mysqli_query($conn, $query);
 $numRows = mysqli_num_rows($result);
 $createdAt = [];
 
-if ($numRows > 0) {
-    function getCreatedAtRow($result) : void
-    {
-        $active = 0;
-        $inActive = 0;
-
-        while ($row = mysqli_fetch_assoc($result))
-        {
-            if (convertDateToMonth($row) <= 12.5) {
-                $active++;
-            } else if(convertDateToMonth($row) > 12) {
-                $inActive++;
-            }
-        }
-        echo json_encode(['Active patients' => $active, 'In active patients' => $inActive]);
-    }
+if ($numRows != 0) {
     getCreatedAtRow($result);
 }
+ else {
+     echo "Rows affected: " . mysqli_errno($conn);
+     exit;
+ }
 
+function getCreatedAtRow($result) : void
+{
+    $active = 0;
+    $inActive = 0;
+
+    while ($row = mysqli_fetch_assoc($result))
+    {
+        if (convertDateToMonth($row) <= 12.5) {
+            $active++;
+        } else if(convertDateToMonth($row) > 12) {
+            $inActive++;
+        }
+    }
+    echo json_encode(['Active patients' => $active, 'In active patients' => $inActive]);
+}
 mysqli_free_result($result);
 mysqli_close($conn);

@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
     margin: 0;
     height: 100vh;
@@ -6,11 +7,22 @@ body {
     align-items: center;
     background-color: #f9fafb;
 }
+
+/* Hero Section */
+.hero-section {
+    background-image: url('https://via.placeholder.com/1500x800'); /* Replace with your hero image */
+    background-size: cover;
+    background-position: center;
+}
+
+/* Image Section */
 .image-section {
     background-image: url('../images/1735662737078.png');
     background-size: cover;
     background-position: center;
 }
+
+/* Header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -25,64 +37,28 @@ body {
     z-index: 1000;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .menu {
     position: relative;
 }
+
 .menu-icon {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
 .logo {
     font-size: 1.25rem;
     font-weight: bold;
 }
+
+#plus {
+    color: #FF6B6B; /* Updated color for #plus */
+}
+
 .contact-button {
     font-size: 1.5rem;
     cursor: pointer;
-}
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: white;
-    color: black;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    overflow: hidden;
-    z-index: 10;
-}
-.dropdown-menu a {
-    display: block;
-    padding: 0.75rem 1rem;
-    text-decoration: none;
-    color: black;
-    font-size: 1rem;
-    width: 10rem;
-    text-align: center;
-}
-.dropdown-menu a:hover {
-    background-color: #f1f1f1;
-}
-.menu:hover .dropdown-menu {
-    display: block;
-}
-.container {
-    margin-top: 100px;
-}
-#plus {
-    color: yellow;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1.5rem;
-    text-align: center;
-    margin-left: 0.2rem;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-.contact-button  {
     background-color: white;
     color: black;
     font-size: 1rem;
@@ -92,4 +68,47 @@ body {
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    color: black;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    width: 10rem;
+    text-align: center;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+}
+
+.menu:hover .dropdown-menu {
+    display: block;
+}
+
+/* Additional Styling for Logo */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #124C4C; /* Adjusted to match theme */
+}
+
+/* Container for content */
+.container {
+    margin-top: 100px;
 }
