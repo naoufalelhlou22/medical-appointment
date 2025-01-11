@@ -1,4 +1,6 @@
 <?php
+
+require '../auth.php';
 // Get the appointment ID from the URL parameter
 $id = $_GET['id'];
 ?>

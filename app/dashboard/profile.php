@@ -1,4 +1,7 @@
 <?php
+
+require '../auth.php';
+
 // Simulate doctor profile data for demonstration purposes
 $doctorProfile = [
     'id' => 'D12345',

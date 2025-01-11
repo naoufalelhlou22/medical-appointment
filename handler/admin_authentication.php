@@ -14,11 +14,10 @@ if ($numRows !== 0) {
     $doctorPassword = $result['password'];
     if ($_POST['username'] === $doctorUsername and $_POST['password'] === $doctorPassword){
         header('location: http://localhost/medical-appointment/app/dashboard/analysis.php');
-        exit;
     } else {
         echo "<script>alert('Credentials is incorrect'); window.location.href = '../doctors/login.html';</script>";
-        exit;
     }
+    exit;
 } else {
     showMessage('false', mysqli_error($conn));
 }

@@ -1,3 +1,4 @@
+<?php require '../auth.php' ?>
 <?php require ('../../includes/header.php') ;?>
 <!DOCTYPE html>
 <html lang="en">
